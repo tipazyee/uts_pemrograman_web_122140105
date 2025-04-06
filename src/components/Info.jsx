@@ -10,7 +10,7 @@ function Info() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`http://localhost:3001/penginapan/${id}`);
+                const res = await fetch(`https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan${id}`);
                 if (!res.ok) {
                     throw new Error('Gagal mengambil data');
                 }

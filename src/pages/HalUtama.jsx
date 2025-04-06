@@ -5,7 +5,7 @@ function HalUtama() {
   const [daftarPenginapan, setDaftarPenginapan] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [url, setUrl] = useState('http://localhost:3001/penginapan'); // Pastikan server json-server berjalan
+  const [url, setUrl] = useState('https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan'); // Pastikan server json-server berjalan
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,7 +27,7 @@ function HalUtama() {
     };
 
     fetchData();
-  }, ['http://localhost:3001/penginapan']);
+  }, ['https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan']);
 
   if (loading) {
     return <div>Loading penginapan...</div>;

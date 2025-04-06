@@ -9,13 +9,13 @@ function DetailPenginapanPage() {
   const [penginapan, setPenginapan] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [url, setUrl] = useState('http://localhost:3001/penginapan');
+  const [url, setUrl] = useState('https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan');
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3001/penginapan');
+        const response = await fetch('https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

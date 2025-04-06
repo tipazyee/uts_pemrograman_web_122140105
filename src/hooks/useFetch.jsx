@@ -9,7 +9,7 @@ function useFetch(url) {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch('http://localhost:3001/penginapan');
+                const response = await fetch('https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

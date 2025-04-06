@@ -28,7 +28,7 @@ function PembayaranPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch(`http://localhost:3001/penginapan/${id}`);
+                const res = await fetch(`https://67ed07c24387d9117bbbefd2.mockapi.io/penginapan/${id}`);
                 if (!res.ok) throw new Error('Data tidak ditemukan atau server error');
                 const data = await res.json();
                 setPenginapan(data);
@@ -94,7 +94,7 @@ function PembayaranPage() {
             </div>
 
             <div className="payment-detail">
-                <label htmlFor="checkInDate" className="detail=item">Tanggal Check-In:</label>
+                <label htmlFor="checkInDate" className="detail-item">Tanggal Check-In:</label>
                 <input
                     type="date"
                     id="checkInDate"
@@ -104,7 +104,7 @@ function PembayaranPage() {
                 />
             </div>
 
-            <div className="payment=detail">
+            <div className="payment-detail">
                 <label htmlFor="duration" className="detail-item">Durasi Menginap (malam):</label>
                 <input
                     type="number"
