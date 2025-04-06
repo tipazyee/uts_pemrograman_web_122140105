@@ -1,0 +1,412 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; 
+  color: #333; 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff; /* Warna latar belakang konten */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+.navbar {
+  background-color: #008080; /* Warna latar belakang navbar (teal) */
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+/* Homepage (Daftar Penginapan) - HalUtama.js */
+.homepage {
+  padding: 20px;
+}
+
+.homepage-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.penginapan-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Membuat grid responsif */
+  gap: 20px;
+}
+
+.penginapan-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.penginapan-card:hover {
+  transform: translateY(-5px);
+}
+
+.penginapan-image {
+  width: 100%;
+  height: 180px; /* Sesuaikan tinggi gambar sesuai kebutuhan */
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.penginapan-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Tengah secara horizontal */
+}
+
+.penginapan-nama {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  text-align: center; /* Tengah nama penginapan */
+}
+
+.penginapan-harga {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #28a745; /* Warna hijau untuk harga */
+  margin-bottom: 10px;
+}
+
+.lihat-detail-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Warna biru untuk tombol */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.lihat-detail-link:hover {
+  background-color: #0056b3;
+}
+/* Halaman Detail Penginapan */
+.detail-page-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.detail-address,
+.detail-rating,
+.detail-distance,
+.detail-price {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.detail-rating .star-icon {
+  color: gold;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+
+.detail-facilities {
+  margin-bottom: 20px;
+}
+
+.facilities-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.facilities-list {
+  list-style: disc;
+  margin-left: 20px;
+  color: #666;
+}
+
+.detail-price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #28a745; /* Green */
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.detail-images-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+}
+
+.detail-image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #007bff; /* Blue */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #0056b3;
+}
+
+.loading-message,
+.error-message,
+.not-found-message {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-top: 20px;
+  color: #777;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.not-found-message {
+  background-color: #fdf7e9;
+  border-color: #faebcc;
+  color: #8a6d3b;
+}
+/* Halaman Pembayaran */
+.payment-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f9f9f9; /* Latar belakang abu-abu muda */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.payment-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.booking-for {
+  font-size: 1.5rem;
+  color: #007bff; /* Warna biru untuk nama penginapan */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.payment-details {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #28a745; /* Warna hijau untuk total harga */
+  margin-top: 15px;
+}
+
+.payment-method,
+.account-info {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.payment-method h3,
+.account-info h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.confirm-payment-button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #28a745; /* Warna hijau untuk tombol konfirmasi */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-payment-button:hover {
+  background-color: #1e7e34;
+}
+
+/* Halaman Bukti Pembayaran */
+.bukti-pembayaran {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.bukti-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.bukti-info p {
+  margin-bottom: 10px;
+}
+
+.bukti-status-berhasil {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.bukti-status-gagal {
+  color: #dc3545;
+  font-weight: bold;
+} */
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+.navbar {
+  background-color: #008080; /* Teal */
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-nav li {
+  margin-left: 20px;
+}
+
+.navbar-nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+  color: #ccc;
+}
+
+/* Footer */
+.footer {
+  background-color: #333; /* Dark gray */
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .printable, .printable * {
+    visibility: visible;
+  }
+
+  .printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    color: black;
+  }
+
+  .print-button {
+    display: none;
+  }
+}
